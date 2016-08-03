@@ -1,0 +1,2 @@
+# EnumUtils
+Enum utilities
