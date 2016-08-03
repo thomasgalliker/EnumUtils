@@ -80,7 +80,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\EnumUtils\EnumUtils.csproj">
+    <ProjectReference Include="..\EnumUtils\EnumUtils.csproj">
       <Project>{12c3a1a2-c021-4159-aefe-2a999f994655}</Project>
       <Name>EnumUtils</Name>
     </ProjectReference>
