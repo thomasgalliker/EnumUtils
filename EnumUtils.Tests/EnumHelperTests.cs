@@ -136,7 +136,7 @@ namespace EnumUtils.Tests
             Action action = () => EnumHelper.Parse<Weekday>(enumString);
 
             // Assert
-            action.ShouldThrow<ArgumentException>().Which.Message.Contains("Requested value \'"+ enumString + "\' was not found.");
+            action.ShouldThrow<ArgumentException>().Which.Message.Should().Contain("Requested value \'"+ enumString + "\' was not found.");
         }
 
         [Fact]
@@ -165,6 +165,34 @@ namespace EnumUtils.Tests
             // Assert
             parsed.Should().NotBeNull();
             parsed.Should().Be(default(Weekday));
+        }
+
+        [Fact]
+        public void ShouldCastToEnum()
+        {
+            // Arrange
+            int enumValue = 3;
+
+            // Act
+            var casted = EnumHelper.Cast<Weekday>(enumValue);
+
+            // Assert
+            casted.Should().NotBeNull();
+            casted.Should().Be(Weekday.Wed);
+        }
+
+        [Fact]
+        public void ShouldCastToEnumWithDefaultValue()
+        {
+            // Arrange
+            int enumValue = 33;
+
+            // Act
+            var casted = EnumHelper.Cast(enumValue, defaultValue: Weekday.Mon);
+
+            // Assert
+            casted.Should().NotBeNull();
+            casted.Should().Be(Weekday.Mon);
         }
     }
 }

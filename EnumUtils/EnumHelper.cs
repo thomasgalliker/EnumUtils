@@ -61,6 +61,26 @@ namespace EnumUtils
             return returnValue;
         }
 
+        /// <summary>
+        /// Safely cast an integer to the underlying enum value.
+        /// </summary>
+        /// <typeparam name="TEnum">Generic param type.</typeparam>
+        /// <param name="value">The integer value for the desired enum.</param>
+        /// <param name="defaultValue">The value returned if the integer does not map to the enum.</param>
+        /// <returns>The enum value which maps to the given integer value.</returns>
+        public static TEnum Cast<TEnum>(int value, TEnum defaultValue = default(TEnum)) where TEnum : struct
+        {
+            var enumType = GetUnderlyingType(typeof(TEnum));
+            ThrowIfNotEnum(enumType);
+
+            if (Enum.IsDefined(typeof(TEnum), value))
+            {
+                return (TEnum)Enum.ToObject(typeof(TEnum), value);
+            }
+
+            return defaultValue;
+        }
+
         public static TEnum GetRandom<TEnum>()
         {
             var values = Enum.GetValues(typeof(TEnum));
