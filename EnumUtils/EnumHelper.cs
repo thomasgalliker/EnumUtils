@@ -26,6 +26,14 @@ namespace EnumUtils
             return Enum.GetValues(enumType).Cast<TEnum>().ToList();
         }
 
+        public static IEnumerable<string> GetNames<TEnum>()
+        {
+            var enumType = GetUnderlyingType(typeof(TEnum));
+            ThrowIfNotEnum(enumType);
+
+            return Enum.GetNames(enumType);
+        }
+
         public static TEnum Parse<TEnum>(string value)
         {
             var enumType = GetUnderlyingType(typeof(TEnum));

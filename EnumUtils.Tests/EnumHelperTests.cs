@@ -51,6 +51,17 @@ namespace EnumUtils.Tests
         }
 
         [Fact]
+        public void ShouldGetNamesFromEnum()
+        {
+            // Act
+            IEnumerable<string> weekdays = EnumHelper.GetNames<Weekday>();
+
+            // Assert
+            weekdays.Should().NotBeNull();
+            weekdays.Should().HaveCount(7);
+        }
+
+        [Fact]
         public void ShouldGetValuesFromNullableEnum()
         {
             // Act
