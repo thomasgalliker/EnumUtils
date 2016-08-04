@@ -51,6 +51,17 @@ namespace EnumUtils.Tests
         }
 
         [Fact]
+        public void ShouldGetNameFromEnum()
+        {
+            // Act
+            string weekday = EnumHelper.GetName(Weekday.Tue);
+
+            // Assert
+            weekday.Should().NotBeNull();
+            weekday.Should().Be("Tue");
+        }
+
+        [Fact]
         public void ShouldGetNamesFromEnum()
         {
             // Act

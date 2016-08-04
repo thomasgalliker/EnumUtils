@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>EnumUtils</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>EnumUtils</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -15,6 +15,9 @@
       EnumUtils enum utils utility EnumHelper helper
     </tags>
     <releaseNotes>
+      1.0.2
+      - Add GetName method to return a particular enum name as string
+      
       1.0.1
       - Add GetNames method to return all enum names as string
       
