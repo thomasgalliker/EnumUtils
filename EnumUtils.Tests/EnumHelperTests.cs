@@ -12,8 +12,47 @@ namespace EnumUtils.Tests
         [Fact]
         public void ShouldReturnTrueIfTypeIsAnEnum()
         {
+            // Arrange
+            var weekday = Weekday.Mon;
+
+            // Act
+            bool isEnum = EnumHelper.IsEnum(weekday);
+
+            // Assert
+            isEnum.Should().BeTrue();
+        }
+
+        [Fact]
+        public void ShouldReturnTrueIfTypeIsAnEnum_ExtensionMethod()
+        {
+            // Arrange
+            var weekday = Weekday.Mon;
+
+            // Act
+            bool isEnum = weekday.IsEnum();
+
+            // Assert
+            isEnum.Should().BeTrue();
+        }
+
+        [Fact]
+        public void ShouldReturnTrueIfTypeIsAnEnum_Generic()
+        {
             // Act
             bool isEnum = EnumHelper.IsEnum<Weekday>();
+
+            // Assert
+            isEnum.Should().BeTrue();
+        }
+
+        [Fact]
+        public void ShouldReturnTrueIfTypeIsAnEnum_Generic_ExtensionMethod()
+        {
+            // Arrange
+            object weekday = Weekday.Mon;
+
+            // Act
+            bool isEnum = weekday.IsEnum();
 
             // Assert
             isEnum.Should().BeTrue();
@@ -136,7 +175,7 @@ namespace EnumUtils.Tests
             Action action = () => EnumHelper.Parse<Weekday>(enumString);
 
             // Assert
-            action.ShouldThrow<ArgumentException>().Which.Message.Should().Contain("Requested value \'"+ enumString + "\' was not found.");
+            action.ShouldThrow<ArgumentException>().Which.Message.Should().Contain("Requested value \'" + enumString + "\' was not found.");
         }
 
         [Fact]

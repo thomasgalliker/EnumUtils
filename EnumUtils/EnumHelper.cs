@@ -18,6 +18,22 @@ namespace EnumUtils
             return GetUnderlyingType<T>().IsEnum;
         }
 
+        /// <summary>
+        /// Checks if the given parameter <paramref name="value"/> is an enum type.
+        /// </summary>
+        /// <returns>True if given type is an enum, otherwise, false.</returns>
+        /// <param name="value"></param>
+        /// <exception cref="T:System.ArgumentNullException">If <paramref name="value"/> is null.</exception>
+        public static bool IsEnum(object value)
+        {
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            return GetUnderlyingType(value.GetType()).IsEnum;
+        }
+
         public static IEnumerable<TEnum> GetValues<TEnum>()
         {
             var enumType = GetUnderlyingType(typeof(TEnum));
