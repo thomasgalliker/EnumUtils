@@ -1,5 +1,5 @@
 # EnumUtils
-<img src="https://raw.githubusercontent.com/thomasgalliker/EnumUtils/master/EnumUtils.png" width="100" height="100" alt="EnumUtils" align="right">
+<img src="https://raw.githubusercontent.com/thomasgalliker/EnumUtils/master/EnumUtils.Logo/EnumUtilsLogo_rect.png" height="100" alt="EnumUtils" align="right">
 EnumUtils provides tools which are commonly used for handling .Net enums.
 
 ### Download and Install EnumUtils
