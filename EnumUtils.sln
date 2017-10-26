@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils", "EnumUtils\EnumUtils.csproj", "{12C3A1A2-C021-4159-AEFE-2A999F994655}"
 EndProject
@@ -12,7 +12,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.NuGet", "EnumUtil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.Tests", "EnumUtils.Tests\EnumUtils.Tests.csproj", "{9D74CA53-8DA0-4B4E-9387-8BC278992887}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.NetStandard", "EnumUtils.NetStandard\EnumUtils.NetStandard.csproj", "{45051F4D-46E9-49D6-A406-EE7B2B3B212A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EnumUtils.Shared", "EnumUtils.Shared\EnumUtils.Shared.shproj", "{A9D5A23A-94BC-4A2A-91A7-BB843210E653}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EnumUtils.Shared\EnumUtils.Shared.projitems*{12c3a1a2-c021-4159-aefe-2a999f994655}*SharedItemsImports = 4
+		EnumUtils.Shared\EnumUtils.Shared.projitems*{a9d5a23a-94bc-4a2a-91a7-bb843210e653}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -30,8 +38,15 @@ Global
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {989A5E88-C177-4161-9741-2B0DF34856E6}
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>EnumUtils</id>
-    <version>1.0.3</version>
+    <version>1.0.4-pre3</version>
     <title>EnumUtils</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -15,20 +15,23 @@
       EnumUtils enum utils utility EnumHelper helper
     </tags>
     <releaseNotes>
-      1.0.3
-      - Add Cast method which safely casts an integer to enum
-      - Add IsEnum extension methods
+1.0.4-pre
+Support for .Net Standard 1.0
       
-      1.0.2
-      - Add GetName method to return a particular enum name as string
+1.0.3
+- Add Cast method which safely casts an integer to enum
+- Add IsEnum extension methods
       
-      1.0.1
-      - Add GetNames method to return all enum names as string
+1.0.2
+- Add GetName method to return a particular enum name as string
       
-      1.0.0
-      - Initial release
+1.0.1
+- Add GetNames method to return all enum names as string
+      
+1.0.0
+- Initial release
     </releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2017</copyright>
     <language>en-US</language>
     <dependencies/>
   </metadata>
@@ -37,6 +40,11 @@
     <file src="..\EnumUtils\bin\Release\EnumUtils.dll" target="lib\portable-net45+dnxcore50+wp80+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\EnumUtils.dll" />
     <file src="..\EnumUtils\bin\Release\EnumUtils.pdb" target="lib\portable-net45+dnxcore50+wp80+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\EnumUtils.pdb" />
     <file src="..\EnumUtils\bin\Release\EnumUtils.xml" target="lib\portable-net45+dnxcore50+wp80+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\EnumUtils.xml" />
+
+    <!--Net Standard 1.0-->
+    <file src="..\EnumUtils.NetStandard\bin\Release\netstandard1.0\EnumUtils.dll" target="lib\netstandard1.0\EnumUtils.dll" />
+    <file src="..\EnumUtils.NetStandard\bin\Release\netstandard1.0\EnumUtils.pdb" target="lib\netstandard1.0\EnumUtils.pdb" />
+    <file src="..\EnumUtils.NetStandard\bin\Release\netstandard1.0\EnumUtils.deps.json" target="lib\netstandard1.0\EnumUtils.deps.json" />
 
     <file src="tools\init.ps1" target="tools\init.ps1" />
     <file src="tools\install.ps1" target="tools\install.ps1" />

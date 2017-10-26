@@ -175,7 +175,7 @@ namespace EnumUtils.Tests
             Action action = () => EnumHelper.Parse<Weekday>(enumString);
 
             // Assert
-            action.ShouldThrow<ArgumentException>().Which.Message.Should().Contain("Requested value \'" + enumString + "\' was not found.");
+            action.ShouldThrow<ArgumentException>().Which.Message.Should().Contain(enumString);
         }
 
         [Fact]

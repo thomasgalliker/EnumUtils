@@ -37,10 +37,10 @@
     <DocumentationFile>bin\Release\EnumUtils.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EnumExtensions.cs" />
-    <Compile Include="EnumHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionExtensions.cs" />
   </ItemGroup>
+  <Import Project="..\EnumUtils.Shared\EnumUtils.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
