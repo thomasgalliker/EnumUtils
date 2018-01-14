@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>EnumUtils</id>
-    <version>1.0.4-pre3</version>
+    <version>1.0.4-pre4</version>
     <title>EnumUtils</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -17,6 +17,7 @@
     <releaseNotes>
 1.0.4-pre
 Support for .Net Standard 1.0
+Add GetValue and GetValues methods
       
 1.0.3
 - Add Cast method which safely casts an integer to enum
