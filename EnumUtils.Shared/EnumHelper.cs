@@ -108,13 +108,6 @@ namespace EnumUtils
             return defaultValue;
         }
 
-        public static TEnum GetRandom<TEnum>()
-        {
-            var values = Enum.GetValues(typeof(TEnum));
-            var item = Rng.Next(0, values.Length);
-            return (TEnum) values.GetValue(item);
-        }
-
         public static Type GetUnderlyingType(Type nullableType)
         {
             var underlyingType = Nullable.GetUnderlyingType(nullableType);
@@ -137,6 +130,21 @@ namespace EnumUtils
             {
                 throw new ArgumentException($"Type {type.Name} must be an enum.");
             }
+        }
+
+        public static TEnum GetRandom<TEnum>()
+        {
+            var values = Enum.GetValues(typeof(TEnum));
+            var item = Rng.Next(0, values.Length);
+            return (TEnum)values.GetValue(item);
+        }
+
+        public static TEnum GetRandom<TEnum>(params TEnum[] excluded)
+        {
+            return GetValues<TEnum>()
+                .Where(v => !excluded.Contains(v))
+                .OrderBy(e => Guid.NewGuid())
+                .FirstOrDefault();
         }
     }
 }

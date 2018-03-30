@@ -1,8 +1,8 @@
-﻿using System;
+﻿using EnumUtils.Tests.Testdata;
+using FluentAssertions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using EnumUtils.Tests.Testdata;
-using FluentAssertions;
 using Xunit;
 
 namespace EnumUtils.Tests
@@ -232,6 +232,47 @@ namespace EnumUtils.Tests
             // Assert
             casted.Should().NotBeNull();
             casted.Should().Be(Weekday.Mon);
+        }
+
+        [Fact]
+        public void ShouldReturnRandomEnum()
+        {
+            // Arrange
+            const int count = 1000;
+
+            // Act
+            var randomWeekdays = Enumerable.Range(0, count).Select(x => EnumHelper.GetRandom<Weekday>()).ToList();
+
+            // Assert
+            randomWeekdays.Should().HaveCount(count);
+            randomWeekdays.Should().Contain(Weekday.Mon);
+            randomWeekdays.Should().Contain(Weekday.Tue);
+            randomWeekdays.Should().Contain(Weekday.Wed);
+            randomWeekdays.Should().Contain(Weekday.Thu);
+            randomWeekdays.Should().Contain(Weekday.Fri);
+            randomWeekdays.Should().Contain(Weekday.Sat);
+            randomWeekdays.Should().Contain(Weekday.Sun);
+        }
+
+        [Fact]
+        public void ShouldReturnRandomEnum_ExcludingParticularValues()
+        {
+            // Arrange
+            const int count = 1000;
+            Weekday[] excludedValues = { Weekday.Sat, Weekday.Sun };
+
+            // Act
+            var randomWeekdays = Enumerable.Range(0, count).Select(x => EnumHelper.GetRandom(excludedValues)).ToList();
+
+            // Assert
+            randomWeekdays.Should().HaveCount(count);
+            randomWeekdays.Should().Contain(Weekday.Mon);
+            randomWeekdays.Should().Contain(Weekday.Tue);
+            randomWeekdays.Should().Contain(Weekday.Wed);
+            randomWeekdays.Should().Contain(Weekday.Thu);
+            randomWeekdays.Should().Contain(Weekday.Fri);
+            randomWeekdays.Should().NotContain(Weekday.Sat);
+            randomWeekdays.Should().NotContain(Weekday.Sun);
         }
     }
 }
