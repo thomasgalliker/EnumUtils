@@ -7,12 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils", "EnumUtils\Enum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.NuGet", "EnumUtils.NuGet\EnumUtils.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
 	ProjectSection(ProjectDependencies) = postProject
+		{45051F4D-46E9-49D6-A406-EE7B2B3B212A} = {45051F4D-46E9-49D6-A406-EE7B2B3B212A}
 		{12C3A1A2-C021-4159-AEFE-2A999F994655} = {12C3A1A2-C021-4159-AEFE-2A999F994655}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.Tests", "EnumUtils.Tests\EnumUtils.Tests.csproj", "{9D74CA53-8DA0-4B4E-9387-8BC278992887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.NetStandard", "EnumUtils.NetStandard\EnumUtils.NetStandard.csproj", "{45051F4D-46E9-49D6-A406-EE7B2B3B212A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumUtils.NetStandard", "EnumUtils.NetStandard\EnumUtils.NetStandard.csproj", "{45051F4D-46E9-49D6-A406-EE7B2B3B212A}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EnumUtils.Shared", "EnumUtils.Shared\EnumUtils.Shared.shproj", "{A9D5A23A-94BC-4A2A-91A7-BB843210E653}"
 EndProject
