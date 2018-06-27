@@ -1,4 +1,6 @@
 # EnumUtils
+[![Version](https://img.shields.io/nuget/v/EnumUtils.svg)](https://www.nuget.org/packages/EnumUtils)  [![Downloads](https://img.shields.io/nuget/dt/EnumUtils.svg)](https://www.nuget.org/packages/EnumUtils)
+
 <img src="https://raw.githubusercontent.com/thomasgalliker/EnumUtils/master/EnumUtils.Logo/EnumUtilsLogo_rect.png" height="100" alt="EnumUtils" align="right">
 EnumUtils provides tools which are commonly used for handling .Net enums.
 
