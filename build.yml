@@ -25,6 +25,10 @@ steps:
     FileNames: |
      EnumUtils.csproj
     InsertAttributes: true
+    Title: 'EnumUtils'
+    Description: ''
+    Company: 'superdev GmbH'
+    Copyright: '©$(date:yyyy) superdev GmbH'
     VersionNumber: '$(Build.BuildNumber)'
     FileVersionNumber: '$(Build.BuildNumber)'
 
