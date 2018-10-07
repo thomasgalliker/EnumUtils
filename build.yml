@@ -45,29 +45,9 @@ steps:
 
 
 - powershell: |
-   $branch1="develop"
-   $branch2="master"
-   
-   [String]$buildNumber= $Env:BUILD_BUILDNUMBER
-   [String]$rev = $buildNumber.Substring($buildNumber.LastIndexOf('.') + 1)
-   echo "rev=$rev"
-   
-   if ("$(Build.SourceBranchName)" -eq $branch1)
-   {
-     echo "the build is on $branch1"
-   
-     Write-Host "##vso[task.setvariable variable=PackageVersion]$(Build.BuildNumber)$(BuildVersionPostfix)"
-   }
-   elseif ("$(Build.SourceBranchName)" -eq $branch2)
-   {
-     echo "the build is on $branch2"
-     Write-Host "##vso[task.setvariable variable=PackageVersion]$(Build.BuildNumber)"
-   }
-   else
-   {
-     echo "it's either on $branch1 branch nor $branch2 branch"
-   } 
-  displayName: 'Set PackageVersion'
+   displayName: 'Set PackageVersion'
+   Write-Host "##vso[task.setvariable variable=PackageVersion]$(Build.BuildNumber)"
+   Write-Host "##vso[task.setvariable variable=PackageVersionPre]$(Build.BuildNumber)$(BuildVersionPostfix)"
 
 - task: VSBuild@1
   displayName: 'Build solution'
@@ -85,7 +65,15 @@ steps:
     arguments: ''
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet pack'
+  displayName: 'Pack NuGet PreRelease'
+  inputs:
+    command: pack
+    packagesToPack: EnumUtils/EnumUtils.csproj
+    versioningScheme: byEnvVar
+    versionEnvVar: PackageVersionPre
+
+- task: DotNetCoreCLI@2
+  displayName: 'Pack NuGet Prod'
   inputs:
     command: pack
     packagesToPack: EnumUtils/EnumUtils.csproj
