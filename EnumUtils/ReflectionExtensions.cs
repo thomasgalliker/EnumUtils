@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace EnumUtils
 {
@@ -6,7 +7,7 @@ namespace EnumUtils
     {
         public static bool IsEnum(this Type value)
         {
-            return value.IsEnum;
+            return value.GetTypeInfo().IsEnum;
         }
     }
 }
