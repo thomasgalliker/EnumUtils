@@ -23,12 +23,9 @@ steps:
   displayName: 'Set Assembly Manifest Data'
   inputs:
     FileNames: |
-     $(Parameters.csproj)
-
+     EnumUtils.csproj
     InsertAttributes: true
-
     VersionNumber: '$(Build.BuildNumber)'
-
     FileVersionNumber: '$(Build.BuildNumber)'
 
 
@@ -61,7 +58,7 @@ steps:
   displayName: 'Run UnitTests'
   inputs:
     command: test
-    projects: '**/*.Tests.csproj '
+    projects: '**/*.Tests.csproj'
     arguments: ''
 
 - task: DotNetCoreCLI@2
