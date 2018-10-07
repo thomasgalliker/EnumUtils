@@ -45,9 +45,9 @@ steps:
 
 
 - powershell: |
-   displayName: 'Set PackageVersion'
    Write-Host "##vso[task.setvariable variable=PackageVersion]$(Build.BuildNumber)"
    Write-Host "##vso[task.setvariable variable=PackageVersionPre]$(Build.BuildNumber)$(BuildVersionPostfix)"
+  displayName: 'Set PackageVersion'
 
 - task: VSBuild@1
   displayName: 'Build solution'
