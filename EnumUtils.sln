@@ -3,24 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils", "EnumUtils\EnumUtils.csproj", "{12C3A1A2-C021-4159-AEFE-2A999F994655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumUtils", "EnumUtils\EnumUtils.csproj", "{12C3A1A2-C021-4159-AEFE-2A999F994655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.NuGet", "EnumUtils.NuGet\EnumUtils.NuGet.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
-	ProjectSection(ProjectDependencies) = postProject
-		{45051F4D-46E9-49D6-A406-EE7B2B3B212A} = {45051F4D-46E9-49D6-A406-EE7B2B3B212A}
-		{12C3A1A2-C021-4159-AEFE-2A999F994655} = {12C3A1A2-C021-4159-AEFE-2A999F994655}
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1A073276-B230-455E-B17C-C5E991E330D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2643D75D-D49E-45EB-8307-8378FD7913B3}"
+	ProjectSection(SolutionItems) = preProject
+		build.yml = build.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.Tests", "EnumUtils.Tests\EnumUtils.Tests.csproj", "{9D74CA53-8DA0-4B4E-9387-8BC278992887}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumUtils.NetStandard", "EnumUtils.NetStandard\EnumUtils.NetStandard.csproj", "{45051F4D-46E9-49D6-A406-EE7B2B3B212A}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EnumUtils.Shared", "EnumUtils.Shared\EnumUtils.Shared.shproj", "{A9D5A23A-94BC-4A2A-91A7-BB843210E653}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumUtils.Tests", "Tests\EnumUtils.Tests\EnumUtils.Tests.csproj", "{9D74CA53-8DA0-4B4E-9387-8BC278992887}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EnumUtils.Shared\EnumUtils.Shared.projitems*{12c3a1a2-c021-4159-aefe-2a999f994655}*SharedItemsImports = 4
-		EnumUtils.Shared\EnumUtils.Shared.projitems*{a9d5a23a-94bc-4a2a-91a7-bb843210e653}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,21 +28,16 @@ Global
 		{12C3A1A2-C021-4159-AEFE-2A999F994655}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12C3A1A2-C021-4159-AEFE-2A999F994655}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12C3A1A2-C021-4159-AEFE-2A999F994655}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D74CA53-8DA0-4B4E-9387-8BC278992887}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45051F4D-46E9-49D6-A406-EE7B2B3B212A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D74CA53-8DA0-4B4E-9387-8BC278992887} = {1A073276-B230-455E-B17C-C5E991E330D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {989A5E88-C177-4161-9741-2B0DF34856E6}

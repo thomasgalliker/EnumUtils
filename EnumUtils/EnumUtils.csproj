@@ -1,52 +1,95 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12C3A1A2-C021-4159-AEFE-2A999F994655}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnumUtils</RootNamespace>
+    <Description>EnumUtils provides some essential enum helper methods.</Description>
+    <AssemblyTitle>EnumUtils</AssemblyTitle>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Version>1.0.0</Version>
+    <Authors>Thomas Galliker</Authors>
+    <TargetFrameworks>netstandard1.2;net45</TargetFrameworks>
     <AssemblyName>EnumUtils</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PackageId>EnumUtils</PackageId>
+    <PackageTags>EnumUtils;enum;utils;utility;EnumHelper;helper</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/thomasgalliker/EnumUtils/master/EnumUtils.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/thomasgalliker/EnumUtils</PackageProjectUrl>
+    <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/thomasgalliker/EnumUtils</RepositoryUrl>
+    <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.2' ">$(PackageTargetFallback);netcoreapp1.0</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.2' ">1.6.1</NetStandardImplicitPackageVersion>
+    <SignAssembly>True</SignAssembly>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\EnumUtils.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReflectionExtensions.cs" />
-  </ItemGroup>
-  <Import Project="..\EnumUtils.Shared\EnumUtils.Shared.projitems" Label="Shared" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
+
+  <!--
+       .NET Core (and the .NET Standard) refactors the API's surface so that it
+       exists in a collection of smaller assemblies. As part of traditional
+       .NET (e.g., net45), System.Console existed as part of the standard
+       System assembly, but for the new standard it was added to its own.
+
+       Here we conditionally include System.Console for the .NET Standard
+       target (which also allows us to use it in .NET Core).
+
+       Reference: https://github.com/dotnet/corefx/issues/683
   -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.2'">
+    <PackageReference Include="System.Console" Version="4.3.0" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);NET45</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <Company>superdev GmbH</Company>
+    <Product>EnumUtils</Product>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RootNamespace>EnumUtils</RootNamespace>
+    <PackageReleaseNotes>2.0.0
+- Migrate to netstandard
+
+1.0.5-pre
+- Add GetRandom with parameter to exclude particular enums
+
+1.0.4
+- Support for .Net Standard 1.0
+- Add GetValue and GetValues methods
+      
+1.0.3
+- Add Cast method which safely casts an integer to enum
+- Add IsEnum extension methods
+      
+1.0.2
+- Add GetName method to return a particular enum name as string
+      
+1.0.1
+- Add GetNames method to return all enum names as string
+      
+1.0.0
+- Initial release</PackageReleaseNotes>
+    <Copyright>Copyright 2018</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>
