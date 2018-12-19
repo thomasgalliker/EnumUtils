@@ -10,7 +10,7 @@
     <AssemblyName>EnumUtils</AssemblyName>
     <PackageId>EnumUtils</PackageId>
     <PackageTags>EnumUtils;enum;utils;utility;EnumHelper;helper</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/thomasgalliker/EnumUtils/master/EnumUtils.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/thomasgalliker/EnumUtils/develop/logo.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/thomasgalliker/EnumUtils</PackageProjectUrl>
     <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
