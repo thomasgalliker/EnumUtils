@@ -1,13 +1,17 @@
-﻿using System;
+using System;
 using System.Reflection;
 
 namespace EnumUtils
 {
-    internal static class ReflectionExtensions
+    public static class ReflectionExtensions
     {
         public static bool IsEnum(this Type value)
         {
+#if NET40 || NET45
+            return value.IsEnum;
+#else
             return value.GetTypeInfo().IsEnum;
+#endif
         }
     }
 }
