@@ -10,7 +10,7 @@ Use the following command to install EnumUtils using NuGet package manager conso
 
     PM> Install-Package EnumUtils
 
-You can use this library in any .Net project which is compatible to PCL (e.g. Xamarin Android, iOS, Windows Phone, Windows Store, Universal Apps, etc.)
+You can use this library in any .Net project which is compatible to .Net Framework 4.0+ and .Net Standard 1.0+.
 
 ### API Usage
 The unit tests shipped along with this library show nicely all the helper methods you can use.
