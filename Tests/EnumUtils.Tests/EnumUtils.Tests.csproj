@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp1.1;net452</TargetFrameworks>
@@ -8,6 +8,10 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <RootNamespace>EnumUtils.Tests</RootNamespace>
     <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <DefineConstants>$(DefineConstants);NET452</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
