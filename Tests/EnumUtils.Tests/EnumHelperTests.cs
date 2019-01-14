@@ -1,8 +1,8 @@
-﻿using EnumUtils.Tests.Testdata;
-using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EnumUtils.Tests.Testdata;
+using FluentAssertions;
 using Xunit;
 
 namespace EnumUtils.Tests
@@ -274,5 +274,27 @@ namespace EnumUtils.Tests
             randomWeekdays.Should().NotContain(Weekday.Sat);
             randomWeekdays.Should().NotContain(Weekday.Sun);
         }
+
+        [Fact]
+        public void ShouldCountEnums()
+        {
+            // Act
+            var count = EnumHelper.Count<Weekday>();
+
+            // Assert
+            count.Should().Be(7);
+        }
+
+#if NET452
+        [Fact]
+        public void ShouldGetDescriptions()
+        {
+            // Act
+            var weekdayDescriptions = EnumHelper.GetDescriptions<Weekday>();
+
+            // Assert
+            weekdayDescriptions.Should().HaveCount(EnumHelper.Count<Weekday>());
+        }
+#endif
     }
 }
