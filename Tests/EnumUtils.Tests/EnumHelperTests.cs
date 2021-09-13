@@ -96,7 +96,7 @@ namespace EnumUtils.Tests
             string weekday = EnumHelper.GetName(Weekday.Tue);
 
             // Assert
-            weekday.Should().NotBeNull();
+            weekday.Should().NotBe(null);
             weekday.Should().Be("Tue");
         }
 
@@ -137,7 +137,6 @@ namespace EnumUtils.Tests
                 EnumHelper.GetRandom<Weekday>(),
             };
 
-
             // Assert
             var weekdayGroups = randomWeekdays.GroupBy(s => s).Select(g => new
             {
@@ -161,7 +160,7 @@ namespace EnumUtils.Tests
             var parsed = EnumHelper.Parse<Weekday>(enumString);
 
             // Assert
-            parsed.Should().NotBeNull();
+            parsed.Should().NotBe(null);
             parsed.Should().Be(Weekday.Thu);
         }
 
@@ -188,7 +187,7 @@ namespace EnumUtils.Tests
             var parsed = EnumHelper.TryParse<Weekday>(enumString);
 
             // Assert
-            parsed.Should().NotBeNull();
+            parsed.Should().NotBe(null);
             parsed.Should().Be(Weekday.Fri);
         }
 
@@ -202,7 +201,7 @@ namespace EnumUtils.Tests
             var parsed = EnumHelper.TryParse<Weekday>(enumString);
 
             // Assert
-            parsed.Should().NotBeNull();
+            parsed.Should().NotBe(null);
             parsed.Should().Be(default(Weekday));
         }
 
@@ -216,7 +215,7 @@ namespace EnumUtils.Tests
             var casted = EnumHelper.Cast<Weekday>(enumValue);
 
             // Assert
-            casted.Should().NotBeNull();
+            casted.Should().NotBe(null);
             casted.Should().Be(Weekday.Wed);
         }
 
@@ -230,7 +229,7 @@ namespace EnumUtils.Tests
             var casted = EnumHelper.Cast(enumValue, defaultValue: Weekday.Mon);
 
             // Assert
-            casted.Should().NotBeNull();
+            casted.Should().NotBe(null);
             casted.Should().Be(Weekday.Mon);
         }
 
