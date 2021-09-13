@@ -7,7 +7,7 @@ namespace EnumUtils
     {
         public static bool IsEnum(this Type value)
         {
-#if NET40 || NET45
+#if NETFRAMEWORK
             return value.IsEnum;
 #else
             return value.GetTypeInfo().IsEnum;
