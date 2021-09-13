@@ -24,7 +24,7 @@ trigger:
     - Samples/*
 
 variables:
-  solution: 'ResourceLoader.sln'
+  solution: 'EnumUtils.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   majorVersion: 2
@@ -57,7 +57,7 @@ steps:
     InsertAttributes: true
     FileEncoding: 'auto'
     WriteBOM: false
-    Product: 'ResourceLoader'
+    Product: 'EnumUtils'
     Description: ''
     Company: 'superdev GmbH'
     Copyright: '(c) $(date:YYYY) superdev GmbH'
@@ -104,10 +104,10 @@ steps:
     assemblyfilters: '-xunit*'
     
 - task: DotNetCoreCLI@2
-  displayName: 'Pack ResourceLoader'
+  displayName: 'Pack EnumUtils'
   inputs:
     command: pack
-    packagesToPack: ResourceLoader/ResourceLoader.csproj
+    packagesToPack: EnumUtils/EnumUtils.csproj
     versioningScheme: byEnvVar
     versionEnvVar: semVersion
     
