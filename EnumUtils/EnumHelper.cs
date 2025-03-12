@@ -93,9 +93,7 @@ namespace EnumUtils
             var enumType = GetUnderlyingType(typeof(TEnum));
             ThrowIfNotEnum(enumType);
 
-            TEnum returnValue;
-            Enum.TryParse(value, ignoreCase, out returnValue);
-
+            Enum.TryParse(value, ignoreCase, out TEnum returnValue);
             return returnValue;
         }
 
